@@ -995,9 +995,11 @@ button {
   }
 
   .hero__video {
-    width: 90%;
-    aspect-ratio: 4 / 3;
-    border-radius: 12px;
+    width: 85%;
+    aspect-ratio: auto;
+    max-height: 50vh;
+    object-fit: contain;
+    border-radius: 0;
   }
 
   .about__content {
@@ -1032,14 +1034,52 @@ button {
 }
 
 @media (max-width: 600px) {
+  /* Hero: reduce height, remove excess whitespace */
+  .hero {
+    min-height: auto;
+    padding: 80px 0 40px;
+  }
+
+  .hero__video {
+    width: 90%;
+    max-height: none;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+
+  /* Header: flex column, nav row first */
   .header {
-    grid-template-columns: 1fr;
-    gap: var(--space-xs);
+    display: flex !important;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .header__nav {
+    order: 1;
     flex-direction: row;
-    gap: var(--space-sm);
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    border-radius: 0;
+  }
+
+  .header__nav a {
+    font-size: var(--font-size-sm);
+    color: var(--color-black) !important;
+  }
+
+  .header__logo {
+    order: 2;
+  }
+
+  /* Show Asunción + hora on mobile */
+  .header__location {
+    display: flex !important;
+    order: 3;
+    margin-top: 4px;
   }
 
   .hero__title {
@@ -1054,7 +1094,8 @@ button {
   .floating-nav a {
     font-size: var(--font-size-sm);
   }
-}
+
+} /* end @media 600px */
 
 /* ============================================
    PAGE LOADING ANIMATION
