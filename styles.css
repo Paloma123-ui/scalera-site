@@ -1104,33 +1104,38 @@ button {
   ───────────────────────────────────────── */
   .hero {
     min-height: auto !important;
-    padding: 60px 0 60px; /* Mas espacio arriba y abajo */
+    padding: 60px 0 60px;
+    display: flex !important;
     flex-direction: column;
-    gap: 20px; /* Espacio entre elementos */
+    align-items: center;  /* Centra todos los elementos */
+    gap: 20px;
     background: var(--color-white);
   }
 
   /* Hat video: centered, bigger, atrás de SCALERA */
   .hero__video {
     position: relative;
-    order: 1;             /* primero */
-    align-self: center;
+    order: 1;
     width: 82%;
     max-height: 280px;
     aspect-ratio: auto;
     object-fit: contain;
     z-index: 1;
-    margin: 10px auto 0;  /* Baja 10px y centra */
-    transform: translateX(-3%); /* Compensa visualmente el visor que sale a la derecha */
+    margin: 10px auto 0;
+    transform: translateX(-5%); /* Mas agresivo para moverlo a la izquierda */
   }
 
   /* SCALERA: SEGUNDO visualmente, adelante con mix-blend-mode */
   .hero__bg-text {
     position: relative !important;
-    order: 2;             /* SCALERA debajo del hat */
+    order: 2;
+    width: 100%;
+    text-align: center;
     font-size: clamp(64px, 22vw, 130px);
     z-index: 2;
-    margin-top: -20px;    /* Solapamiento sutil para el efecto */
+    margin-top: -20px;
+    margin-left: 0; /* Resetea el margen de desktop */
+    transform: none; /* Resetea el shift de desktop */
     mix-blend-mode: difference;
   }
 
