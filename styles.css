@@ -1110,23 +1110,25 @@ button {
     background: var(--color-white);
   }
 
-  /* Hat video: BEHIND the SCALERA text */
+  /* Hat video: PRIMERO visualmente, detrás de SCALERA */
   .hero__video {
     position: relative;
+    order: 1;             /* hat primero arriba */
     width: 80%;
     max-height: 240px;
     aspect-ratio: auto;
     object-fit: contain;
-    z-index: 1;           /* gorro va atrás */
+    z-index: 1;
     margin-bottom: 0;
   }
 
-  /* SCALERA: EN FRENTE del gorro, con mix-blend-mode difference */
+  /* SCALERA: SEGUNDO visualmente, adelante con mix-blend-mode */
   .hero__bg-text {
     position: relative !important;
+    order: 2;             /* SCALERA debajo del hat */
     font-size: clamp(64px, 22vw, 130px);
-    z-index: 2;           /* SCALERA adelante */
-    margin-top: -48px;    /* sube para solapar el gorro */
+    z-index: 2;
+    margin-top: -52px;    /* sube para solapar el borde inferior del gorro */
     mix-blend-mode: difference;
   }
 
