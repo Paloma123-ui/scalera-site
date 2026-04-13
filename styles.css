@@ -1056,7 +1056,7 @@ button {
     display: flex !important;
     flex-direction: column;
     align-items: center;
-    gap: 40px; /* Mas espacio entre la pastilla y el texto bio */
+    gap: 60px; /* Ajuste extremo para que se note el cambio */
     padding: 24px 20px 16px;
     background: var(--color-white);
     z-index: auto;
@@ -1122,7 +1122,7 @@ button {
     object-fit: contain;
     z-index: 1;
     margin: 10px auto 0;
-    transform: translateX(-18%); /* Desplazamiento fuerte a la izquierda para centrar el cuerpo del gorro */
+    transform: translateX(-35%); /* Desplazamiento MUY fuerte a la izquierda para centrar el cuerpo del gorro */
   }
 
   /* SCALERA: SEGUNDO visualmente, adelante con mix-blend-mode */
