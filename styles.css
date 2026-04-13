@@ -1104,9 +1104,9 @@ button {
   ───────────────────────────────────────── */
   .hero {
     min-height: auto !important;
-    padding: 20px 0 32px;
+    padding: 60px 0 60px; /* Mas espacio arriba y abajo */
     flex-direction: column;
-    gap: 0;
+    gap: 20px; /* Espacio entre elementos */
     background: var(--color-white);
   }
 
@@ -1115,8 +1115,8 @@ button {
     position: relative;
     order: 1;             /* primero */
     align-self: center;
-    width: 88%;
-    max-height: 260px;
+    width: 82%;           /* Un poco mas pequeño para dar "aire" */
+    max-height: 280px;
     aspect-ratio: auto;
     object-fit: contain;
     z-index: 1;
@@ -1129,7 +1129,7 @@ button {
     order: 2;             /* SCALERA debajo del hat */
     font-size: clamp(64px, 22vw, 130px);
     z-index: 2;
-    margin-top: -52px;    /* sube para solapar el borde inferior del gorro */
+    margin-top: -20px;    /* Solapamiento sutil para el efecto */
     mix-blend-mode: difference;
   }
 
