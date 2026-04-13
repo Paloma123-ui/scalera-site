@@ -132,6 +132,12 @@ button {
   background: #E6FF00;
   animation: none;
 }
+/* Hide custom cursor on touch devices (mobile/tablet) */
+@media (hover: none), (pointer: coarse) {
+  .cursor {
+    display: none !important;
+  }
+}
 
 /* ============================================
    FLOATING NAV PILL
