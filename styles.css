@@ -1114,8 +1114,14 @@ button {
   }
 
   .footer__cta {
+    display: flex !important;
     width: 100%;
     justify-content: center;
+  }
+
+  /* Hide goat canvas on mobile — too heavy and breaks layout */
+  .goat-footer {
+    display: none;
   }
 
 } /* end @media 600px */
