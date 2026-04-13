@@ -1115,12 +1115,13 @@ button {
     position: relative;
     order: 1;             /* primero */
     align-self: center;
-    width: 82%;           /* Un poco mas pequeño para dar "aire" */
+    width: 82%;
     max-height: 280px;
     aspect-ratio: auto;
     object-fit: contain;
     z-index: 1;
-    margin: 0 auto;
+    margin: 10px auto 0;  /* Baja 10px y centra */
+    transform: translateX(-3%); /* Compensa visualmente el visor que sale a la derecha */
   }
 
   /* SCALERA: SEGUNDO visualmente, adelante con mix-blend-mode */
