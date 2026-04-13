@@ -1095,6 +1095,29 @@ button {
     font-size: var(--font-size-sm);
   }
 
+  /* Footer mobile: single column, clean layout */
+  .footer {
+    padding: var(--space-lg) var(--page-padding) var(--space-md);
+  }
+
+  .footer__content {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .footer__message {
+    max-width: 100%;
+  }
+
+  .footer__links {
+    text-align: left;
+  }
+
+  .footer__cta {
+    width: 100%;
+    justify-content: center;
+  }
+
 } /* end @media 600px */
 
 /* ============================================
