@@ -1045,12 +1045,12 @@ button {
 }
 
 @media (max-width: 600px) {
-  /* Hero: stack elements, reduce whitespace */
+  /* Hero: stack elements, remove padding because header pushes it down */
   .hero {
     min-height: auto;
-    padding: 80px 0 40px;
+    padding: 20px 0 40px;
     flex-direction: column;
-    gap: 32px;
+    gap: 16px;
   }
 
   .hero__video {
@@ -1060,11 +1060,14 @@ button {
     object-fit: contain;
   }
 
-  /* Header: flex column, nav row first */
+  /* Header: flow layout to push hero down cleanly */
   .header {
     display: flex !important;
     flex-direction: column;
-    gap: 8px;
+    align-items: center;
+    position: relative;
+    gap: 24px;
+    padding-top: 24px;
   }
 
   .header__nav {
@@ -1099,7 +1102,14 @@ button {
     justify-content: center;
     width: 100%;
     z-index: 5;
-    margin-top: -10px;
+    margin-top: 0px;
+  }
+
+  .hero__mobile-location .location-tag {
+    padding: 12px 28px;
+    background: #f8f8f8;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
 
   .hero__title {
