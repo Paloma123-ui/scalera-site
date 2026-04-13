@@ -1045,87 +1045,108 @@ button {
 }
 
 @media (max-width: 600px) {
-  /* Hero: stack elements, remove padding because header pushes it down */
-  .hero {
-    min-height: auto;
-    padding: 20px 0 40px;
-    flex-direction: column;
-    gap: 16px;
-  }
 
-  .hero__video {
-    width: 90%;
-    max-height: none;
-    aspect-ratio: auto;
-    object-fit: contain;
-  }
-
-  /* Header: flow layout to push hero down cleanly */
+  /* ─────────────────────────────────────────
+     HEADER → position: static on mobile
+     This is the KEY fix. The fixed header was
+     overlapping everything. Now it flows normally.
+  ───────────────────────────────────────── */
   .header {
+    position: static !important;
     display: flex !important;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    gap: 24px;
-    padding-top: 24px;
+    gap: 20px;
+    padding: 24px 20px 16px;
+    background: var(--color-white);
+    z-index: auto;
   }
 
+  /* Nav pill: centered at top */
   .header__nav {
     order: 1;
     flex-direction: row;
     justify-content: center;
     gap: 20px;
-    padding: 12px 24px;
+    padding: 12px 28px;
     background: #ffffff;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 100px;
     margin: 0 auto;
+    width: auto;
   }
 
   .header__nav a {
-    font-size: var(--font-size-sm);
+    font-size: 14px;
+    font-weight: 500;
     color: var(--color-black) !important;
   }
 
+  /* Bio text below the pill */
   .header__logo {
     order: 2;
+    align-self: flex-start;
   }
 
-  /* Hide header location tag on mobile, we show it in the hero instead */
+  /* Hide the right-side location (we show it in hero) */
   .header__location {
     display: none !important;
   }
 
+  /* Hide the floating scroll-triggered nav on mobile */
+  .floating-nav {
+    display: none !important;
+  }
+
+  /* ─────────────────────────────────────────
+     HERO → clean white card, auto height
+  ───────────────────────────────────────── */
+  .hero {
+    min-height: auto !important;
+    padding: 20px 0 32px;
+    flex-direction: column;
+    gap: 0;
+    background: var(--color-white);
+  }
+
+  /* Hat video: sits above the SCALERA text */
+  .hero__video {
+    position: relative;
+    width: 75%;
+    max-height: 260px;
+    aspect-ratio: auto;
+    object-fit: contain;
+    z-index: 2;
+    margin-bottom: -20px; /* overlap slightly over SCALERA text */
+  }
+
+  /* SCALERA giant text */
+  .hero__bg-text {
+    position: relative !important;
+    font-size: clamp(64px, 22vw, 130px);
+    z-index: 1;
+  }
+
+  /* Location tag below SCALERA */
   .hero__mobile-location {
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-top: 24px;
     z-index: 5;
-    margin-top: 0px;
   }
 
   .hero__mobile-location .location-tag {
-    padding: 12px 28px;
-    background: #f8f8f8;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 10px 24px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   }
 
-  .hero__title {
-    font-size: clamp(48px, 18vw, 120px);
-  }
-
-  .floating-nav {
-    padding: 10px 20px;
-    gap: 16px;
-  }
-
-  .floating-nav a {
-    font-size: var(--font-size-sm);
-  }
-
-  /* Footer mobile: single column, clean layout */
+  /* ─────────────────────────────────────────
+     FOOTER
+  ───────────────────────────────────────── */
   .footer {
     padding: var(--space-lg) var(--page-padding) var(--space-md);
   }
@@ -1149,12 +1170,13 @@ button {
     justify-content: center;
   }
 
-  /* Hide goat canvas on mobile — too heavy and breaks layout */
+  /* Hide goat canvas on mobile */
   .goat-footer {
     display: none;
   }
 
 } /* end @media 600px */
+
 
 /* ============================================
    PAGE LOADING ANIMATION
