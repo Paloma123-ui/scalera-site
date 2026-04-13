@@ -1110,16 +1110,17 @@ button {
     background: var(--color-white);
   }
 
-  /* Hat video: PRIMERO visualmente, detrás de SCALERA */
+  /* Hat video: centered, bigger, atrás de SCALERA */
   .hero__video {
     position: relative;
-    order: 1;             /* hat primero arriba */
-    width: 80%;
-    max-height: 240px;
+    order: 1;             /* primero */
+    align-self: center;
+    width: 88%;
+    max-height: 260px;
     aspect-ratio: auto;
     object-fit: contain;
     z-index: 1;
-    margin-bottom: 0;
+    margin: 0 auto;
   }
 
   /* SCALERA: SEGUNDO visualmente, adelante con mix-blend-mode */
@@ -1132,12 +1133,13 @@ button {
     mix-blend-mode: difference;
   }
 
-  /* Location tag below SCALERA */
+  /* Location tag: Último, debajo de SCALERA */
   .hero__mobile-location {
     display: flex;
     justify-content: center;
+    order: 3;             /* después del SCALERA */
     width: 100%;
-    margin-top: 24px;
+    margin-top: 20px;
     z-index: 5;
   }
 
