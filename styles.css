@@ -1122,7 +1122,7 @@ button {
     object-fit: contain;
     z-index: 1;
     margin: 10px auto 0;
-    transform: translateX(-35%); /* Desplazamiento MUY fuerte a la izquierda para centrar el cuerpo del gorro */
+    transform: translateX(-65%); /* Desplazamiento extremo sugerido por el usuario para iPhone 16 */
   }
 
   /* SCALERA: SEGUNDO visualmente, adelante con mix-blend-mode */
